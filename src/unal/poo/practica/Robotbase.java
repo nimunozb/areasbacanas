@@ -95,7 +95,7 @@ public class Robotbase {
     public static void prioridad(boolean miradas[]){
       if ((miradas[2]==true)&&(miradas[3]==false)&& //si hay una pared unicamente en el lado sur 
           (miradas[0]==false)&&(miradas[1]==false)){
-          faceWest();estudiante.move();
+          faceWest();estudiante.move();//se mueve hacia el occidente
       }else{
           if((miradas[2]==false)&&(miradas[3]==false)&& //si no hay pared en ninguna direccion 
              (miradas[0]==false)&&(miradas[1]==false)&& //y el robot no ha estado ahi
@@ -111,8 +111,8 @@ public class Robotbase {
            faceSouth();estudiante.move();estudiante.move();
           }else{
               if((miradas[2]==false)&&(miradas[3]==false)&&  
-           (miradas[0]==false)&&(miradas[1]==true)){
-                  faceSouth();estudiante.move();
+           (miradas[0]==false)&&(miradas[1]==true)){ //si hay una pared unicamente en el este
+                  faceSouth();estudiante.move();// se mueve hacia abajo
               }
           }
 
