@@ -11,85 +11,37 @@ import becker.robots.*;
  * @author Andres
  */
 public class Lote {
-   private City city;
-   private final Robot estudiante;
-   private int dir;
-   private boolean area[][]; 
+   private static City city=new City();
    
     public Lote() {
-        this.dir =1;
-        this.area =  new boolean[10][10];
-        this.city = new City();
+         
         for (int i = 0; i < 5; i++) {
             Wall pared = new Wall(city, 2, i+1, Direction.NORTH);
             Wall pared1 = new Wall(city, 6, i+1, Direction.SOUTH);
             Wall pared3 = new Wall(city, i+2, 5, Direction.EAST);
             Wall pared4 = new Wall(city, i+2, 1, Direction.WEST);
         
-        }this.estudiante = new Robot(city, 1, 1, Direction.NORTH,10);
-        
+        }
     }
-    public void faceNorth(){
-            if (dir==4) {
-                estudiante.turnLeft();
-                estudiante.turnLeft();
-                estudiante.turnLeft();
-            }
-            if (dir==3) {
-                estudiante.turnLeft();
-                estudiante.turnLeft();
-            }
-            if (dir==2) {
-                estudiante.turnLeft();
-            }dir=1;
-            
-        }
-    public void faceEast(){
-            if (dir==1) {
-                estudiante.turnLeft();
-                estudiante.turnLeft();
-                estudiante.turnLeft();
-            }
-            if (dir==4) {
-                estudiante.turnLeft();
-                estudiante.turnLeft();
-            }
-            if (dir==3) {
-                estudiante.turnLeft();
-            }dir=2;
-            
-        }
-    public void faceSouth(){
-            if (dir==2) {
-                estudiante.turnLeft();
-                estudiante.turnLeft();
-                estudiante.turnLeft();
-            }
-            if (dir==1) {
-                estudiante.turnLeft();
-                estudiante.turnLeft();
-            }
-            if (dir==4) {
-                estudiante.turnLeft();
-            }dir=3;
-            
-        }
-    public void faceWest(){
-            if (dir==3) {
-                estudiante.turnLeft();
-                estudiante.turnLeft();
-                estudiante.turnLeft();
-            }
-            if (dir==2) {
-                estudiante.turnLeft();
-                estudiante.turnLeft();
-            }
-            if (dir==1) {
-                estudiante.turnLeft();
-            }dir=4;
-            
-        }
-    public void area(){
+
+    public  City getCity() {
+        return city;
+    }
+
+    public void setCity(City city) {
+        Lote.city = city;
+    }
+
+ 
+
+
+
+}
+       
+        
+    
+   
+   /* public void area(){
         int pared =0;
         estudiante.putThing();
         if (!estudiante.frontIsClear()) {
@@ -190,12 +142,12 @@ public class Lote {
             estudiante.move();
         }}
         return 0;
-    }
+    }*/
 
-}
-    
 
     
+
+
     
     
     
