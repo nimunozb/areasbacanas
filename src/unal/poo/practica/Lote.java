@@ -18,10 +18,19 @@ public class Lote {
         for (int i = 0; i < 5; i++) {
             Wall pared = new Wall(city, 2, i+1, Direction.NORTH);
             Wall pared1 = new Wall(city, 6, i+1, Direction.SOUTH);
-            Wall pared3 = new Wall(city, i+2, 5, Direction.EAST);
-            Wall pared4 = new Wall(city, i+2, 1, Direction.WEST);
-        
+            Wall pared3 = new Wall(city, i+3, 7, Direction.EAST);
+            Wall pared4 = new Wall(city, i+3, -1, Direction.WEST);
         }
+        for (int i = 0; i < 2; i++) {
+             Wall pared1 = new Wall(city, 2,-1+i, Direction.SOUTH);
+              Wall pared2 = new Wall(city, 2,6+i, Direction.SOUTH);
+               Wall pared3 = new Wall(city, 8,-1+i, Direction.NORTH);
+                Wall pared4 = new Wall(city, 8,6+i, Direction.NORTH);
+        }
+       Wall pared5 = new Wall(city, 2,0, Direction.EAST);
+        Wall pared1 = new Wall(city, 7,0, Direction.EAST);
+       Wall pared2 = new Wall(city, 2,6, Direction.WEST);
+        Wall pared3 = new Wall(city, 7,6, Direction.WEST);
     }
 
     public  City getCity() {
