@@ -15,22 +15,31 @@ public class Lote {
    
     public Lote() {
          
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 4; i++) {
             Wall pared = new Wall(city, 2, i+1, Direction.NORTH);
-            Wall pared1 = new Wall(city, 6, i+1, Direction.SOUTH);
-            Wall pared3 = new Wall(city, i+3, 7, Direction.EAST);
-            Wall pared4 = new Wall(city, i+3, -1, Direction.WEST);
+            Wall pared1 = new Wall(city,9, i+5, Direction.SOUTH);
+            Wall pared3 = new Wall(city, i+2, 8, Direction.EAST);
+            Wall pared4 = new Wall(city, i+6, 1, Direction.WEST);
         }
-        for (int i = 0; i < 2; i++) {
-             Wall pared1 = new Wall(city, 2,-1+i, Direction.SOUTH);
-              Wall pared2 = new Wall(city, 2,6+i, Direction.SOUTH);
-               Wall pared3 = new Wall(city, 8,-1+i, Direction.NORTH);
-                Wall pared4 = new Wall(city, 8,6+i, Direction.NORTH);
+        for (int i = 0; i < 3; i++) {
+             Wall pared1 = new Wall(city, 9,i+1, Direction.SOUTH);
+              Wall pared2 = new Wall(city, 2,6+i, Direction.NORTH);
+               Wall pared3 = new Wall(city, 2+i,1, Direction.WEST);
+                Wall pared4 = new Wall(city, 7+i,8, Direction.EAST);
+                  Wall pared5 = new Wall(city, 4,i+1, Direction.SOUTH);
+                    Wall pared6 = new Wall(city, 6,i+1, Direction.NORTH);
+                      Wall pared7 = new Wall(city, 5,i+6, Direction.SOUTH);
+                       Wall pared8 = new Wall(city, 7,i+6, Direction.NORTH);
+                        
+                       Wall pared9 = new Wall(city, i+2,4, Direction.EAST);
+                    Wall pared10 = new Wall(city, i+2,6, Direction.WEST);
+                      Wall pared11 = new Wall(city, i+7,3, Direction.EAST);
+                       Wall pared12 = new Wall(city, i+7,5, Direction.WEST);
         }
-       Wall pared5 = new Wall(city, 2,0, Direction.EAST);
-        Wall pared1 = new Wall(city, 7,0, Direction.EAST);
-       Wall pared2 = new Wall(city, 2,6, Direction.WEST);
-        Wall pared3 = new Wall(city, 7,6, Direction.WEST);
+      Wall pared5 = new Wall(city, 6,5, Direction.EAST);
+        Wall pared1 = new Wall(city, 5,5, Direction.NORTH);
+       Wall pared2 = new Wall(city, 6,4, Direction.SOUTH);
+        Wall pared3 = new Wall(city, 5,4, Direction.WEST);
     }
 
     public  City getCity() {
