@@ -15,14 +15,17 @@ public class Robotbase {
     private static Posicion posicion;
      private static int dir=4;
     private static int estado=0;
-     public static void main(String[] args) {
+    private static int maxAv =0;
+    private static int maxStre=0;
+    private static boolean figura[][] =new boolean[30][30]; 
+    public static void main(String[] args) {
          lote=new Lote();
-         estudiante=new Robot(lote.getCity(),2, 1, Direction.WEST,1999);
+         estudiante=new Robot(lote.getCity(),1, 1, Direction.WEST,1999);
          posicion=new Posicion();
-       boolean quit=false;
-         while(!quit){
-         mirartodoslados();}
-         
+       estudiante.putThing();
+         do{
+         mirartodoslados();}while(!estudiante.canPickThing());
+         System.out.println(calcularArea());
      }
  public static void faceNorth(){
             if (dir==4) {
@@ -242,7 +245,38 @@ public class Robotbase {
            (miradas[0]==false)&&(miradas[1]==true)&&(estado==0)){//continua en la direccion de salida
                         faceNorth();estudiante.move();
                   }}}}}}}}}}}}}}}}}}}}}}}}}}}}}
-   /**
+    
+    public static void area(/*boolean miradas[]*/ ){
+       
+        
+        /*for (int i = 0; i < 4; i++) {
+            if(miradas[i]==true){
+                figura[estudiante.getStreet()][estudiante.getAvenue()]=true;
+            }
+        }*/
+        figura[estudiante.getStreet()][estudiante.getAvenue()]=true;
+        int a=0;
+        for (int i = 0; i < 30; i++) {
+            for (int j = 0; j < 30; j++) {
+                if(figura[i][j]){
+                a=1;    
+                }else{
+                    a=0;
+                }
+                System.out.print(a+" ");
+            }System.out.println("");
+        }
+        if (maxAv<estudiante.getAvenue()) {
+            maxAv = estudiante.getAvenue();
+        }
+        if (maxStre<estudiante.getStreet()){
+            maxStre= estudiante.getStreet();
+        }
+            
+    }
+    
+    
+    /**
    *@deprecated: mira a todas las direcciones y guarda las posiciones en donde hay una pared en una matriz
    * que luego sera utilizada por la funcion prioridad.
    */
@@ -257,10 +291,54 @@ public class Robotbase {
         if(estudiante.frontIsClear()==false){miradas[0]=true;} 
    faceWest();estudiante.frontIsClear();
         if(estudiante.frontIsClear()==false){miradas[3]=true;}
-     prioridad(miradas);
+        area();
+        prioridad(miradas);
    
    }
-    
+   
+   public static int calcularArea(){
+       boolean aux =false;
+       int conteo[]= new int[maxStre];
+       int resultado = 0;
+       for (int i = 0; i < maxStre; i++) {
+           for (int j = 0; j < maxAv; j++) {
+               int num1 = 0;
+               for (int k = 0; k < maxAv; k++) {
+                   if(figura[i][k]){
+                       num1 =num1+1;
+                   }
+               }
+               if (num1%2==0) {
+                   if (aux) {
+                   conteo[i]++;
+               }
+               if(((figura[i][j])&&(figura[i][j+1]==false))||((figura[i][j]))&&(aux)){
+                   aux=!aux;
+               }
+               }else {
+                   
+                       int f=0;
+                       for (int k = 0; k < maxAv; k++) {
+                           if (f!=num1) {
+                               if(figura[i][k]){
+                               f++;
+                           }else{
+                               conteo[i]++;
+                           }
+                           }
+                           
+                       }
+   
+                   
+               }
+               
+           }
+       }
+       for (int i = 0; i < maxStre; i++) {
+           resultado=resultado +conteo[i];
+       }
+       return resultado;
+   }
     
     
 }
