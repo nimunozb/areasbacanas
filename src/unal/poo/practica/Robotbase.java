@@ -20,7 +20,7 @@ public class Robotbase {
     private static boolean figura[][] =new boolean[30][30]; 
     public static void main(String[] args) {
          lote=new Lote();
-         estudiante=new Robot(lote.getCity(),1, 1, Direction.WEST,1999);
+         estudiante=new Robot(lote.getCity(),2, 0, Direction.WEST,1999);
          posicion=new Posicion();
        estudiante.putThing();
          do{
@@ -263,8 +263,8 @@ public class Robotbase {
                 }else{
                     a=0;
                 }
-                System.out.print(a+" ");
-            }System.out.println("");
+                //System.out.print(a+" ");
+            }//System.out.println("");
         }
         if (maxAv<estudiante.getAvenue()) {
             maxAv = estudiante.getAvenue();
@@ -297,18 +297,20 @@ public class Robotbase {
    }
    
    public static int calcularArea(){
-       boolean aux =false;
+
        int conteo[]= new int[30];
        int resultado = 0;
-       for (int i = 0; i < maxStre+2; i++) {
-           for (int j = 0; j < maxAv+2; j++) {
-               int num1 = 0;
+       for (int i = 0; i < maxStre; i++) {
+           boolean aux =false;int num1 = 0;
+           for (int j = 0; j < maxAv; j++) {
+               
                for (int k = 0; k < maxAv; k++) {
                    if(figura[i][k]){
                        num1 =num1+1;
+                       
                    }
-               }
-               if (num1%2==0) {
+               }System.out.println(num1);
+               if (num1%2!=0) {
                    if (aux) {
                    conteo[i]++;
                }
@@ -318,16 +320,16 @@ public class Robotbase {
                }else {
                    
                        int f=0;
-                       for (int k = 0; k < maxAv+2; k++) {
+
                            if (f!=num1) {
-                               if(figura[i][k]){
+                               if(figura[i][j]){
                                f++;
                            }else{
                                conteo[i]++;
                            }
                            }
                            
-                       }
+                       
    
                    
                }

@@ -15,7 +15,22 @@ public class Lote {
    
     public Lote() {
          
-        for (int i = 0; i < 4; i++) {
+        for (int i = 1; i <= 9; i++) {
+            
+            Wall pared1 = new Wall(city, 9, i, Direction.SOUTH);
+            Wall pared2 = new Wall(city, i, 9, Direction.EAST);
+            Wall pared3 = new Wall(city, i, 1, Direction.WEST);
+        }
+        for (int i = 1; i <= 5; i++) {
+            Wall pared = new Wall(city, 1, i, Direction.NORTH);
+            Wall pared4 = new Wall(city, i, 5, Direction.EAST);
+            Wall pared6 = new Wall(city, i, 8, Direction.WEST);
+        }for (int i = 1; i < 3; i++) {
+            Wall pared5 = new Wall(city, 6, i+5, Direction.NORTH);
+            Wall pared7 = new Wall(city, 1, i+7, Direction.NORTH);
+        }
+        
+        /*for (int i = 0; i < 4; i++) {
             Wall pared = new Wall(city, 2, i+1, Direction.NORTH);
             Wall pared1 = new Wall(city,9, i+5, Direction.SOUTH);
             Wall pared3 = new Wall(city, i+2, 8, Direction.EAST);
@@ -39,7 +54,7 @@ public class Lote {
       Wall pared5 = new Wall(city, 6,5, Direction.EAST);
         Wall pared1 = new Wall(city, 5,5, Direction.NORTH);
        Wall pared2 = new Wall(city, 6,4, Direction.SOUTH);
-        Wall pared3 = new Wall(city, 5,4, Direction.WEST);
+        Wall pared3 = new Wall(city, 5,4, Direction.WEST);*/
     }
 
     public  City getCity() {
