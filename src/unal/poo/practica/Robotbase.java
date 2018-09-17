@@ -25,7 +25,7 @@ public class Robotbase {
        estudiante.putThing();
          do{
          mirartodoslados();}while(!estudiante.canPickThing());
-         System.out.println(calcularArea());
+         System.out.println("El area del lote es "+calcularArea()+"m2");
      }
  public static void faceNorth(){
             if (dir==4) {
