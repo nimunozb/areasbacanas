@@ -301,7 +301,8 @@ public class Robotbase {
        int conteo[]= new int[30];
        int resultado = 0;
        for (int i = 0; i < maxStre; i++) {
-           boolean aux =false;int num1 = 0;
+           boolean aux =false;
+           int num1 = 0;
            for (int j = 0; j < maxAv; j++) {
                
                for (int k = 0; k < maxAv; k++) {
@@ -309,7 +310,7 @@ public class Robotbase {
                        num1 =num1+1;
                        
                    }
-               }System.out.println(num1);
+               }
                if (num1%2!=0) {
                    if (aux) {
                    conteo[i]++;
