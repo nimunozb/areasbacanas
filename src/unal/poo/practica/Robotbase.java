@@ -298,10 +298,10 @@ public class Robotbase {
    
    public static int calcularArea(){
        boolean aux =false;
-       int conteo[]= new int[maxStre];
+       int conteo[]= new int[30];
        int resultado = 0;
-       for (int i = 0; i < maxStre; i++) {
-           for (int j = 0; j < maxAv; j++) {
+       for (int i = 0; i < maxStre+2; i++) {
+           for (int j = 0; j < maxAv+2; j++) {
                int num1 = 0;
                for (int k = 0; k < maxAv; k++) {
                    if(figura[i][k]){
@@ -318,7 +318,7 @@ public class Robotbase {
                }else {
                    
                        int f=0;
-                       for (int k = 0; k < maxAv; k++) {
+                       for (int k = 0; k < maxAv+2; k++) {
                            if (f!=num1) {
                                if(figura[i][k]){
                                f++;
@@ -334,7 +334,7 @@ public class Robotbase {
                
            }
        }
-       for (int i = 0; i < maxStre; i++) {
+       for (int i = 0; i < 30; i++) {
            resultado=resultado +conteo[i];
        }
        return resultado;
